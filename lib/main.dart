@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:flutter/services.dart";
 import "package:go_router/go_router.dart";
 import "package:provider/provider.dart";
 import "package:thesaurus/constants.dart";
@@ -15,8 +16,16 @@ import "model/shared_prefs.dart";
 
 Future<void> main() async {
   // Always initialize Awesome Notifications
+  //for system chrome
+  WidgetsFlutterBinding.ensureInitialized();
   await NotificationController.initializeLocalNotifications();
   await UserPreferences.init();
+  SystemChrome.setPreferredOrientations(
+      //list of orientations here
+      [
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
   runApp(
     ChangeNotifierProvider(create: (context) => Model(), child: const MyApp()),
   );
@@ -31,16 +40,24 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: _router,
-      key: navigatorKey,
       theme: ThemeData(
+          useMaterial3: true,
+          iconButtonTheme: const IconButtonThemeData(
+              style: ButtonStyle(
+            iconColor: MaterialStatePropertyAll(Colors.white),
+          )),
           scaffoldBackgroundColor: kbackgroundColor,
-          appBarTheme: const AppBarTheme(backgroundColor: ksecondaryColor)),
+          appBarTheme: const AppBarTheme(backgroundColor: ksecondaryColor),
+          colorScheme:
+              ColorScheme.fromSwatch().copyWith(secondary: ksecondaryColor)),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 final GoRouter _router = GoRouter(
+  //since there is no navigator key parameter in MaterialApp.router
+  navigatorKey: MyApp.navigatorKey,
   routes: <GoRoute>[
     GoRoute(
       path: '/',
