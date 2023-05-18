@@ -104,7 +104,9 @@ class ResponseScreen extends StatelessWidget {
                                 child: Text(
                                   "Search web",
                                   style:
-                                      TextStyle(fontSize: size.height * 0.029),
+                                      TextStyle(
+                                        color: Colors.white,
+                                        fontSize: size.height * 0.029),
                                 )),
                           )
                         ],
