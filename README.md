@@ -3,7 +3,8 @@
 A basic thesaurus app developed with Flutter
 
 ## Demo
-https://github.com/A-Rafay32/thesaurus/assets/113136294/61b67a9c-85a9-4f0d-945f-c9d1be5f2172
+![Thesaurus App](https://github.com/A-Rafay32/thesaurus/assets/113136294/f77bb009-e918-4aa2-b6df-c1851f66d9b9)
+
 
 ## Features 
   * Shared Preferences 
