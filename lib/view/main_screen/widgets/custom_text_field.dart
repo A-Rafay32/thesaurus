@@ -45,7 +45,9 @@ class CustomTextField extends StatelessWidget {
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.all(15),
                     suffixIcon: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          
+                        },
                         icon: Icon(
                           Icons.search_rounded,
                           color: Colors.black,

@@ -7,15 +7,15 @@ import 'package:thesaurus/view/main_screen/widgets/popup_button.dart';
 
 import '../../model/model.dart';
 
-class History extends StatelessWidget {
-  const History({super.key});
+class HistoryScreen extends StatelessWidget {
+  const HistoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        actions: [CustomPopupMenuButton()],
+        actions: const [CustomPopupMenuButton()],
         leading: IconButton(
             onPressed: () => context.go("/"),
             icon: const Icon(Icons.arrow_back_ios_new_outlined)),
@@ -67,12 +67,13 @@ class ListCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(text, style: TextStyle(color: Colors.white, fontSize: size.height * 0.026)),
+          Text(text,
+              style: TextStyle(
+                  color: Colors.white, fontSize: size.height * 0.026)),
           IconButton(
               onPressed: press,
               icon: Icon(Icons.delete_outline_rounded,
-                  size: size.height * 0.033,
-                  color: Colors.white)),
+                  size: size.height * 0.033, color: Colors.white)),
         ],
       ),
     );

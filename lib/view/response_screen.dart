@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
 import '../model/model.dart';
-import '../view/main_screen/widgets/header.dart';
+import 'main_screen/widgets/header.dart';
 
 class ResponseScreen extends StatelessWidget {
   ResponseScreen({super.key});
@@ -103,10 +103,9 @@ class ResponseScreen extends StatelessWidget {
                                 },
                                 child: Text(
                                   "Search web",
-                                  style:
-                                      TextStyle(
-                                        color: Colors.white,
-                                        fontSize: size.height * 0.029),
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: size.height * 0.029),
                                 )),
                           )
                         ],
@@ -183,7 +182,6 @@ class ResponseScreen extends StatelessWidget {
                                       fontSize: 19, color: Colors.white70),
                             ),
                           ),
-
                           Container(
                             padding: const EdgeInsets.only(top: 10, left: 20),
                             alignment: Alignment.bottomLeft,
@@ -210,29 +208,18 @@ class ResponseScreen extends StatelessWidget {
                                         fontSize: 19, color: Colors.white70),
                               ),
                             ),
-                          // SizedBox(
-                          //   width: size.width * 0.7,
-                          //   child: Text(
-                          //     "${snapshot.data?.synonyms}\t\t\t",
-                          //     style: Theme.of(context)
-                          //         .textTheme
-                          //         .titleLarge
-                          //         ?.copyWith(fontSize: 16, color: Colors.white),
-                          //   ),
-                          // ),
-
                           Container(
-                            padding: const EdgeInsets.only(top: 10, left: 22.0),
-                            alignment: Alignment.bottomLeft,
-                            child: Text(
-                              "${snapshot.data?.antonyms.join(" ,  ")}",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleLarge
-                                  ?.copyWith(fontSize: 16, color: Colors.white),
-                            ),
-                          ),
-
+                              padding:
+                                  const EdgeInsets.only(top: 10, left: 22.0),
+                              alignment: Alignment.bottomLeft,
+                              child: Text(
+                                "${snapshot.data?.antonyms.join(" ,  ")}",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge
+                                    ?.copyWith(
+                                        fontSize: 16, color: Colors.white),
+                              )),
                           const SizedBox(
                             height: 20,
                           )

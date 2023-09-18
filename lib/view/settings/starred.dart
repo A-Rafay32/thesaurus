@@ -7,8 +7,8 @@ import 'package:thesaurus/view/main_screen/widgets/popup_button.dart';
 
 import '../../model/model.dart';
 
-class Starred extends StatelessWidget {
-  const Starred({super.key});
+class StarredScreen extends StatelessWidget {
+  const StarredScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
